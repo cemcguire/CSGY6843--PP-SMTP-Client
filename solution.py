@@ -61,7 +61,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    # Fill in start
    emailMessageDataCommand = msg
    clientSocket.send(emailMessageDataCommand.encode())
-   #recv1 = clientSocket.recv(1024).decode()
+   #recv5 = clientSocket.recv(1024).decode()
    #print(recv1)
    #if recv1[:3] != '250':
    #    print('emailMessageDataCommand: 250 reply not received from server.')
@@ -71,7 +71,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    # Fill in start
    emailMessageDataEndCommand = endmsg
    clientSocket.send(emailMessageDataEndCommand.encode())
-   #recv1 = clientSocket.recv(1024).decode()
+   recv5 = clientSocket.recv(1024).decode()
    #print(recv1)
    #if recv1[:3] != '250':
    #    print('emailMessageDataEndCommand: 250 reply not received from server.')
@@ -81,7 +81,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    # Fill in start
    emailQuitCommand = 'QUIT\r\n'
    clientSocket.send(emailQuitCommand.encode())
-   recv5 = clientSocket.recv(1024).decode()
+   recv6 = clientSocket.recv(1024).decode()
    #print(recv1)
    #if recv1[:3] != '250':
    #    print('250 reply not received from server.')
